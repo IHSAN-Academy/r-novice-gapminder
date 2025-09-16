@@ -1,0 +1,162 @@
+---
+title: Data Ethics for Health Research
+author: Gabriel Odom
+teaching: 45
+exercises: 15
+source: Rmd
+---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Define ethics and apply the Golden Rule in the context of data science.
+- Recognize that data comes from real people and communities, especially in minority health research.
+- Identify how bias and underrepresentation affect fairness in health data analysis.
+- Explain why reproducibility and transparency are ethical practices.
+- Apply the Ethical Matrix framework to structure ethical decision-making.
+- Discuss the balance between privacy and open data sharing.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What do we mean by “ethics” in data science?  
+- How does the history of minority health research shape today’s ethical responsibilities?  
+- How can bias creep into data, and what are its consequences?  
+- Why is reproducibility a matter of ethics, not just good practice?  
+- How can we use the Ethical Matrix to evaluate difficult data decisions?  
+- When should health data be shared openly, and when should it be restricted?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Foundations: What is Ethics?
+
+Ethics provides principles for deciding right from wrong in human actions.  
+It is not the same as law or compliance: something can be legal but still unethical.  
+
+A useful framing is the **Golden Rule**: *Do unto others as you would have them do unto you.*  
+This principle is powerful for thinking about how our data practices affect other people.  
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Case Example: Tuskegee Syphilis Study
+
+From 1932 to 1972, Black men in Alabama were misled and denied treatment in the Tuskegee Syphilis Study.  
+This is one of the most infamous examples of failing to follow even basic ethical principles.  
+
+- What would “do unto others” have meant in this case?  
+- How would the study have looked if the Golden Rule were applied?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Data Comes From People — With Minority Health in Focus
+
+Every dataset reflects real people, often from communities with histories of marginalization.  
+Respect requires informed consent, privacy protection, and ensuring benefits flow back to communities.  
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Case Examples
+
+- **Havasupai Tribe DNA Samples (2000s):** DNA given for diabetes research was later used for other studies without consent, leading to mistrust.  
+- **COVID-19 Data Gaps:** Early U.S. pandemic reporting undercounted impacts on Black and Latino communities, delaying targeted responses.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  challenge
+
+**Challenge:**  
+You receive health data from a small tribal population.  
+What safeguards must be in place to respect participants and the community?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Bias and Fairness in Data
+
+Skewed or incomplete data lead to unfair conclusions. Minority groups are often underrepresented or misclassified.  
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Case Examples
+
+- **Pulse Oximeters:** Found less accurate for patients with darker skin tones, leading to disparities in care.  
+- **Electronic Health Records:** Hispanic patients frequently misclassified as “other” or “unknown,” skewing analyses.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  discussion
+
+**Discussion:**  
+If pulse oximeter data were central to your study, how might this bias influence your findings?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Reproducibility and Transparency as Ethical Practice
+
+Reproducibility is not just a technical best practice — it is an ethical obligation.  
+Transparent workflows protect against error, build trust, and make science more equitable.  
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Case Examples
+
+- **NIH All of Us Research Program:** Prioritizes diversity in participants and makes reproducible data pipelines available.  
+- **Reproducibility Crisis:** Many clinical studies fail replication, disproportionately harming underserved populations who may rely on flawed evidence.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  challenge
+
+**On Your Own:**  
+Identify one step in your current workflow that you could make more transparent.  
+Examples: sharing analysis scripts, describing recruitment biases, or publishing data dictionaries.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Ethical Decision-Making with the Ethical Matrix
+
+The Ethical Matrix is a tool for balancing competing interests:  
+- **Rows = stakeholders** (e.g., patients, families, researchers, policymakers).  
+- **Columns = principles** (well-being, autonomy, justice).  
+
+:::::::::::::::::::::::::::::::::::::::::  challenge
+
+**Mini-Exercise:**  
+Fill in a small Ethical Matrix for this scenario:  
+*Should we release de-identified asthma data from Black and Latino children for AI research?*  
+
+Consider: Who benefits? Whose autonomy is respected? Who bears risks?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Open Issues: Balancing Privacy and Data Sharing
+
+Data sharing can advance science but may also compromise privacy and trust.  
+Researchers must weigh openness (knowledge, equity) against protection (safety, respect).  
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Case Examples
+
+- **Henrietta Lacks’ HeLa Cells:** Shared without consent; family only later included in decisions.  
+- **Tribal Epidemiology Centers:** Tribes assert sovereignty and control over their own health data.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  discussion
+
+**Discussion:**  
+When should health data be shared openly, and when should it be restricted?  
+What criteria would you use to make that decision?  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Ethics is distinct from law and compliance; the Golden Rule is a simple starting point.  
+- Data comes from real people, and respect requires cultural and historical awareness.  
+- Bias in data harms minority health and can reinforce inequities.  
+- Reproducibility and transparency are ethical practices that protect communities.  
+- The Ethical Matrix offers a structured way to weigh impacts on stakeholders.  
+- Privacy and openness must be balanced thoughtfully in health research.  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
