@@ -19,7 +19,7 @@ source: Rmd
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What do we mean by “ethics” in data science?  
+- What do we mean by "ethics" in data science?  
 - How does the history of minority health research shape today’s ethical responsibilities?  
 - How can bias creep into data, and what are its consequences?  
 - Why is reproducibility a matter of ethics, not just good practice?  
@@ -38,35 +38,59 @@ This principle is powerful for thinking about how our data practices affect othe
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Case Example: Tuskegee Syphilis Study
+### Case Example: Tuskegee Syphilis Study
 
-From 1932 to 1972, Black men in Alabama were misled and denied treatment in the Tuskegee Syphilis Study.  
+From 1932 to 1972, Black men in Alabama were misled and denied treatment in the Tuskegee Syphilis Study. The study began, perhaps, with good intentions: to study the progression of (what was at that time) and incurable disease. However, in 1940, the purified penicillin compound was isolated, and in 1943 it was used to treat syphilis for the first time (with miraculous results). By 1945 this compound was widely available to treat infections in the United States and Western Europe. This debilitating and deadly disease was no longer incurable!
+
+However, this story does not have the happy ending we should expect. The scientists and clinicians of the United States Public Health Service, which were running the study did not treat the men in their care with the newly-available lifesaving antibiotic. Instead, these scientists:
+
+- withheld the diagnosis of syphilis from these men, instead describing their ailments as "bad blood", making informed consent impossible
+- withheld the treatment for syphilis from these men, even after treatment of syphilis with penicilin-based antibiotics was commonplace (meaning that the scientists caused harm by inaction)
+
+> "By 1943, when the Division of Venereal Diseases began treating syphilitic patients nationwide with penicillin, the men in the Tuskegee study were not considered patients. They were viewed as experimental subjects and were denied antibiotic treatment. - *"Bad Blood:" A Case Study of the Tuskegee Syphilis Project*, <https://cales.arizona.edu/classes/pls595d/Assignments/2007/BadBlood.pdf>
+
 This is one of the most infamous examples of failing to follow even basic ethical principles.  
 
-- What would “do unto others” have meant in this case?  
+- What would "do unto others" have meant in this case?  
 - How would the study have looked if the Golden Rule were applied?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Data Comes From People — With Minority Health in Focus
+## Data Comes From People
 
-Every dataset reflects real people, often from communities with histories of marginalization.  
-Respect requires informed consent, privacy protection, and ensuring benefits flow back to communities.  
+Every dataset reflects real people, often from communities with histories of marginalization. Participants in clinical trials often "loan" their data to researchers to complete specific research questions. For example, a patient with colon cancer may donate tissue samples to a data bank for the **purpose** of researching a cure for colon cancer. Because of this, most human subjects data comes with the restrictions that the data are to be used to better human health, most often specifically including *benefiting* the health of the person who supplied their data (this is the concept of *beneficence*: that the welfare of the participant should be the priority). Respect requires informed consent, privacy protection, and ensuring benefits from scientific discoveries flow back to individuals and communities. 
+
+> To consider: if I were analyzing your data, are their some questions you wouldn't want me to ask?
+
+Beyond this, we must recognize that scientific advancements are data driven. Therefore, in order to promote equitable distributions of scientific advancement, we must provide equitable opportunity for communities to provide samples. In 2000, the National Institutes of Health issued notices to all clinical trials that women and racial/ethnic minorities **must** be represented in trial cohorts (<https://grants.nih.gov/grants/guide/notice-files/NOT-OD-00-048.html>). These policies promote data collection procedures which are fair.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Case Examples
+### Case Examples
 
-- **Havasupai Tribe DNA Samples (2000s):** DNA given for diabetes research was later used for other studies without consent, leading to mistrust.  
-- **COVID-19 Data Gaps:** Early U.S. pandemic reporting undercounted impacts on Black and Latino communities, delaying targeted responses.  
+- **Havasupai Tribe DNA Samples (2000s):** DNA given for diabetes research was later used for other studies without consent, leading to mistrust  (<https://journalofethics.ama-assn.org/article/genetic-research-among-havasupai-cautionary-tale/2011-02>). 
+- **COVID-19 Data Gaps:** Early U.S. pandemic reporting undercounted impacts on Black and Latino communities, delaying targeted responses (<https://doi.org/10.1177/00333549231154577>).  
+- **All of Us Database:** The Researcher Workbench (which controls access to the *All of Us* database) requires the users to follow a code of conduct which prohibits using data for stigmatizing research (<https://www.researchallofus.org/faq/policy-on-stigmatizing-research/>).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  challenge
 
-**Challenge:**  
-You receive health data from a small tribal population.  
-What safeguards must be in place to respect participants and the community?  
+**Challenge 1**  
+
+Consider an academic research institution which is collecting genomic samples to complete an Alzheimer's Disease study. When people are signing the consent forms, they are given four options:
+
+> A) My samples should be used for this study only.
+  B) Request in writing for my approval to use my samples for each new study.
+  C) I approve use of use my samples for other any biomedical research studies at this institution, but inform me in writing for each new study.
+  D) My samples may be used for any biomedical research studies at this institution at any time and without my written permission or knowledge.
+
+Which option would you pick? For each of the options above, describe a person who you could imagine selecting that option. What is a reason *they* would choose that option?
+  
+
+**Challenge 2:** 
+
+You receive health data from a small tribal population. What safeguards must be in place to respect participants and the community?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -76,7 +100,7 @@ Skewed or incomplete data lead to unfair conclusions. Minority groups are often 
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Case Examples
+### Case Examples
 
 - **Pulse Oximeters:** Found less accurate for patients with darker skin tones, leading to disparities in care.  
 - **Electronic Health Records:** Hispanic patients frequently misclassified as “other” or “unknown,” skewing analyses.  
@@ -97,7 +121,7 @@ Transparent workflows protect against error, build trust, and make science more 
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Case Examples
+### Case Examples
 
 - **NIH All of Us Research Program:** Prioritizes diversity in participants and makes reproducible data pipelines available.  
 - **Reproducibility Crisis:** Many clinical studies fail replication, disproportionately harming underserved populations who may rely on flawed evidence.  
@@ -135,7 +159,7 @@ Researchers must weigh openness (knowledge, equity) against protection (safety, 
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Case Examples
+### Case Examples
 
 - **Henrietta Lacks’ HeLa Cells:** Shared without consent; family only later included in decisions.  
 - **Tribal Epidemiology Centers:** Tribes assert sovereignty and control over their own health data.  
