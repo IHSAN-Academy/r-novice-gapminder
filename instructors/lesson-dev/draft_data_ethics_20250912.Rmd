@@ -28,6 +28,8 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 ## Foundations: What is Ethics?
 
 Ethics provides principles for deciding right from wrong in human actions.  
@@ -37,6 +39,7 @@ A useful framing is the **Golden Rule**: *Do unto others as you would have them 
 This principle is powerful for thinking about how our data practices affect other people.  
 
 :::::::::::::::::::::::::::::::::::::::::  callout
+
 
 ### Case Example: Tuskegee Syphilis Study
 
@@ -56,6 +59,8 @@ This is one of the most infamous examples of failing to follow even basic ethica
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 ## Data Comes From People
 
 Every dataset reflects real people, often from communities with histories of marginalization. Participants in clinical trials often "loan" their data to researchers to complete specific research questions. For example, a patient with colon cancer may donate tissue samples to a data bank for the **purpose** of researching a cure for colon cancer. Because of this, most human subjects data comes with the restrictions that the data are to be used to better human health, most often specifically including *benefiting* the health of the person who supplied their data (this is the concept of *beneficence*: that the welfare of the participant should be the priority). Respect requires informed consent, privacy protection, and ensuring benefits from scientific discoveries flow back to individuals and communities. 
@@ -65,6 +70,7 @@ Every dataset reflects real people, often from communities with histories of mar
 Beyond this, we must recognize that scientific advancements are data driven. Therefore, in order to promote equitable distributions of scientific advancement, we must provide equitable opportunity for communities to provide samples. In 2000, the National Institutes of Health issued notices to all clinical trials that women and racial/ethnic minorities **must** be represented in trial cohorts (<https://grants.nih.gov/grants/guide/notice-files/NOT-OD-00-048.html>). These policies promote data collection procedures which are fair.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
+
 
 ### Case Examples
 
@@ -93,6 +99,8 @@ Which option would you pick? For each of the options above, describe a person wh
 You receive health data from a small tribal population. What safeguards must be in place to respect participants and the community?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 ## Bias and Fairness in Data
 
@@ -168,6 +176,7 @@ From the perspective of statisticians, the original reason for excluding minorit
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
+
 ### Case Examples
 
 - **Pulse Oximeters:** Blood oxygen saturation readings are less accurate for patients with darker skin tones, leading to disparities in care (<https://publichealth.jhu.edu/2024/pulse-oximeters-racial-bias>).  
@@ -191,6 +200,7 @@ You want to perform a secondary data analysis using a large, historic, public da
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ## Reproducibility and Transparency as Ethical Practice
 
 Reproducibility is not just a technical best practice---it is an ethical obligation.  
@@ -202,9 +212,8 @@ Consider the now-famous "wolf vs. husky" image classification problem: Researche
 
 When we perform an analysis, we should (as much as is possible), publish the original de-identified data, the source code, and directions to replicate the computing environment. When other people can see *how* we came to our conclusions, these conclusions are more trustworthy. Ethics, applied to research reproducibility, means that you make it as easy as possible for other people to reproduce your results.
 
-
-
 :::::::::::::::::::::::::::::::::::::::::  callout
+
 
 ### Case Examples
 
@@ -219,6 +228,8 @@ When we perform an analysis, we should (as much as is possible), publish the ori
 Identify one step in your current workflow that you could make more transparent (eg: sharing analysis scripts, describing recruitment biases, or publishing data dictionaries). What would a completely reproducible workflow look like?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 ## Ethical Decision-Making with the Ethical Matrix
 
@@ -256,26 +267,43 @@ Fill in a small Ethical Matrix for this scenario:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Open Issues: Balancing Privacy and Data Sharing
 
-Data sharing can advance science but may also compromise privacy and trust. Researchers must weigh openness (knowledge, equity) against protection (safety, respect).  
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+## Examples of Open Issues in Data Ethics
+This section is not meant to be a comprehensive overview of all open ethics issues in data science, but instead to give some examples.
 
-### Case Examples
 
-- **Henrietta Lacks’ HeLa Cells:** Shared without consent; family only later included in decisions.  
-- **Tribal Epidemiology Centers:** Tribes assert sovereignty and control over their own health data.  
+### Balancing Privacy and Data Sharing
+Data sharing can advance science but may also compromise privacy and trust. Researchers must weigh openness (knowledge, equity) against protection (safety, respect). Two famous examples have been discussed in the past:
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+- **Henrietta Lacks’ HeLa Cells:** Her cells were shared without her consent. Decades after she passed away, her family was included in decisions (<https://www.smithsonianmag.com/science-nature/henrietta-lacks-immortal-cells-6421299/>).  
+- **Tribal Epidemiology Centers:** American Indian and Alaskan Native tribes assert "data sovereignty" and control over their own health data and records (<https://washingtonstatestandard.com/2025/03/28/tribes-long-shut-out-from-their-own-health-data-fight-for-access-and-sovereignty/>).  
 
 :::::::::::::::::::::::::::::::::::::::::  discussion
 
 **Discussion:**  
-When should health data be shared openly, and when should it be restricted?  
-What criteria would you use to make that decision?  
+When should health data be shared openly, and when should it be restricted? What criteria would you use to make that decision?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+### Medical Advancements vs Environmental Impacts of AI
+AI is a powerful tool for scientific research. Some of the discoveries that are being made right now will increase the overall health of the human species for centuries to come. However, the computing resources of AI require enormous natural resources, such as land, electricity, carbon "credits", and water. 
+
+- **Environmental Impact of AI:** If all data centers and the servers to support AI tools were their own country, that country would be the 11th largest consumer of electricity on the planet (<https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117>).
+- **Healthcare Benefits of AI:** Embedding AI into electronic health records has the potential to transform healthcare by analyzing large datasets to improve disease diagnosis, treatment planning, and clinical decision-making (<https://bmcmededuc.biomedcentral.com/articles/10.1186/s12909-023-04698-z>).
+
+
+:::::::::::::::::::::::::::::::::::::::::  discussion
+
+**Challenge:**  
+How would you quantify (in a standard currency) the positive health impact of AI compared to the negative environmental impact of AI? Discuss with your fellow students.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## Wrapping Up
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
