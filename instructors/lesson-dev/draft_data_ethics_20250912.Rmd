@@ -222,9 +222,24 @@ Identify one step in your current workflow that you could make more transparent 
 
 ## Ethical Decision-Making with the Ethical Matrix
 
-The Ethical Matrix is a tool for balancing competing interests:  
-- **Rows = stakeholders** (e.g., patients, families, researchers, policymakers).  
-- **Columns = principles** (well-being, autonomy, justice).  
+As a quick review, the Golden rule says to "do unto others as you would have done unto you." This rule has four main components in three groups:
+
+- **do**
+    1. *What* research we do?
+    2. *How* we do that research?
+- **others**
+    3. *Who* are the people affected by your research?
+- **you**
+    4. *You* and your team are causing some effect to happen to others through this research
+
+So far, we have discussed some of the many ways that the Golden Rule has been ignored in the data sciences. However, we haven't had much conversation about how we can practically apply ethical principles in data science. Given a research team and their funded research project, that team should ask questions about how the research they complete will affect various groups. The **Ethical Matrix** is a tool to help us systematically apply the Golden Rule across combinations of people and characteristics of research.
+
+Often, two good characteristics of research may result in competing interests. For example, the value of "reproducible research" and "equity" requires that data be made publicly available to everyone, but the values of "respect for persons" and "privacy" require that data should have protected information redacted or removed. These two values are both important, but they can be in conflict. The Ethical Matrix gives research teams the structure to compare competing ethical demands upon them. This paper gives some more background and examples from the field of ecology and environmental sciences: (<https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2021.584636/full>)
+
+We structure the sources of these competing interests in a matrix, where: 
+
+- **Rows = stakeholders** (e.g., patients, families, community members, researchers, policymakers, taxpayers).  
+- **Columns = principles** (respect for persons, well-being, autonomy, justice, beneficence, privacy, cost-effectiveness, reproducibility, accuracy, etc.).  
 
 :::::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -232,14 +247,18 @@ The Ethical Matrix is a tool for balancing competing interests:
 Fill in a small Ethical Matrix for this scenario:  
 *Should we release de-identified asthma data from Black and Latino children for AI research?*  
 
-Consider: Who benefits? Whose autonomy is respected? Who bears risks?  
+1. Who are the "others" in this case? (That is, what **rows** should your ethical matrix include?)
+2. What are the characteristics of the research, the values that should be considered? (That is, what **columns** should your ethical matrix include?)
+3. Use your matrix to consider:
+    + Who benefits?
+    + Whose autonomy is respected?
+    + Who bears risks?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Open Issues: Balancing Privacy and Data Sharing
 
-Data sharing can advance science but may also compromise privacy and trust.  
-Researchers must weigh openness (knowledge, equity) against protection (safety, respect).  
+Data sharing can advance science but may also compromise privacy and trust. Researchers must weigh openness (knowledge, equity) against protection (safety, respect).  
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -261,7 +280,7 @@ What criteria would you use to make that decision?
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Ethics is distinct from law and compliance; the Golden Rule is a simple starting point.  
-- Data comes from real people, and respect requires cultural and historical awareness.  
+- Data comes from real people, and respect requires cultural and historical awareness.
 - Bias in data harms minority health and can reinforce inequities.  
 - Reproducibility and transparency are ethical practices that protect communities.  
 - The Ethical Matrix offers a structured way to weigh impacts on stakeholders.  
