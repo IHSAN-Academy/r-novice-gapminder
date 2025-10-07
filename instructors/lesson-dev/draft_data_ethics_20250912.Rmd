@@ -96,14 +96,83 @@ You receive health data from a small tribal population. What safeguards must be 
 
 ## Bias and Fairness in Data
 
-Skewed or incomplete data lead to unfair conclusions. Minority groups are often underrepresented or misclassified.  
+If we want to mitigate biased results from our statistical models, we must cast a "wide net" to collect representative data from across the spectrum of possible patients. As we saw above, minority participants in clinical trials have not always been afforded the same protections or benefits as their majority counterparts. In some extreme examples, minority subjects were even harmed. These actions from scientists have eroded trust in medical science. Often due to this lack of trust, minority groups are often skeptical of the benefits of participating in scientific research, leading to lower participation rates among minority groups (<https://pmc.ncbi.nlm.nih.gov/articles/PMC3222419/>). 
+
+While modern clinical trials and surveillance data sets (since 2015) often have rich(er) minority representation, this was not often the case. This figure shows the average clinical trial participation for US racial/ethnic minority groups since 1990 for both NIH-funded and other-funded clinical trials^[Note that these percentages are MUCH higher for NIH-funded research alone, but their trials are smaller.]:
+```{r, echo=FALSE, message=FALSE}
+
+# Code from Claude; 7 October 2025
+# Prompt: Hi Claude, I'm looking for a graph of minority representation in US
+# clinical trials over time. Can you put that code into Tidyverse R code? Can
+# you give me the hyperlinks of the sources you use for the data?
+
+library(tidyverse)
+library(scales)
+
+minorityTrialParticipation_df <- tibble(
+  year = c(1995, 2000, 2005, 2010, 2015, 2020),
+  `African American` = c(0.97, 1.2, 1.5, 1.8, 2.0, 2.23),
+  `Hispanic/Latino` = c(0.18, 0.4, 0.6, 0.8, 1.0, 1.24),
+  `Asian American` = c(0.14, 0.3, 0.5, 0.7, 0.9, 1.04)
+) %>%
+  pivot_longer(
+    cols = -year, 
+    names_to = "group", 
+    values_to = "percentage"
+  )
+
+### Claude Sources ###
+# Based on my search results, here are the hyperlinks to the sources for the
+# data:
+# 
+# Mayo Clinic Proceedings (2021) - Study analyzing 25 years of data showing
+# African American, Hispanic/Latino, and Asian American representation trends:
+# https://www.mayoclinicproceedings.org/article/S0025-6196(20)31259-3/fulltext
+# 
+# Lancet Regional Health - Americas (2022) - Study on racial and ethnic
+# representation in clinical trials:
+# https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(22)00069-2/fulltext
+# 
+# FDA Drug Trials Snapshots - Data on demographics in clinical trials (2015-2019
+# period):
+# https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots
+
+# Create line chart for historical trends
+ggplot(minorityTrialParticipation_df) +
+  aes(x = year, y = percentage, color = group) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  scale_color_manual(values = c(
+    "African American" = "#8b5cf6",
+    "Hispanic/Latino" = "#f59e0b",
+    "Asian American" = "#10b981"
+  )) +
+  labs(
+    title = "Minority Representation in US Clinical Trials Over Time",
+    subtitle = "Historical trend showing modest increases in minority participation (1995-2020)",
+    x = "Year",
+    y = "Percentage (%)",
+    color = "Minority Subgroup"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 10, color = "gray40"),
+    legend.position = "bottom"
+  )
+
+
+```
+
+From the perspective of statisticians, the original reason for excluding minority participants was based on good *intentions*: to reduce the extra variability and increase statistical power. However, we should not judge policies by their intentions, but by their results. The *results* of excluding minority participants from clinical trials for decades was a body of scientific research that often failed to generalize outside of the study cohort of (younger/male) white participants. The intentions might have been good, but the results were not: when minority groups are underrepresented or misclassified, then we don't get a complete picture of the disease and its effects. Skewed or incomplete data lead to biased conclusions.   
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ### Case Examples
 
-- **Pulse Oximeters:** Found less accurate for patients with darker skin tones, leading to disparities in care.  
-- **Electronic Health Records:** Hispanic patients frequently misclassified as “other” or “unknown,” skewing analyses.  
+- **Pulse Oximeters:** Blood oxygen saturation readings are less accurate for patients with darker skin tones, leading to disparities in care (<https://publichealth.jhu.edu/2024/pulse-oximeters-racial-bias>).  
+- **Facial Recongnition:** older facial recognition algorithms were trained primarily on white faces, so they were very inaccurate for minorities---especially for Black women (<https://amnesty.ca/features/racial-bias-in-facial-recognition-algorithms/>).
+- **Electronic Health Records:** Hispanic patients are frequently misclassified as "other" or "unknown" in EHR systems, skewing analyses (<https://pmc.ncbi.nlm.nih.gov/articles/PMC5342943/>).  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -114,25 +183,40 @@ If pulse oximeter data were central to your study, how might this bias influence
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::  challenge
+
+**Challenge**  
+You want to perform a secondary data analysis using a large, historic, public database. What are some steps you can take to ensure that your analysis cohort is more closely representative of the general population?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 ## Reproducibility and Transparency as Ethical Practice
 
-Reproducibility is not just a technical best practice — it is an ethical obligation.  
-Transparent workflows protect against error, build trust, and make science more equitable.  
+Reproducibility is not just a technical best practice---it is an ethical obligation.  
+Transparent workflows protect against error, build trust, and make science more equitable. But before we continue our discussion, we must define terms:
+
+> To **reproduce** scientific findings, an investigator takes the original experiment's data and sees if analysis leads to the same results. To **replicate** scientific findings, a scientist runs the same experiment and collects new data, after which analysis leads to the same [or similar] results. --- 'An Existential Crisis' for Science, 2024. <https://www.ipr.northwestern.edu/news/2024/an-existential-crisis-for-science.html>
+
+Consider the now-famous "wolf vs. husky" image classification problem: Researchers trained a neural network to classify images as either wolves or huskies. The model achieved high accuracy on the training data, but when they investigated how it was making decisions, they discovered that the model wasn't actually learning to distinguish wolves from huskies based on the animals' *features*. Instead, it had learned that wolves tend to appear in images with snow *in the background*, while huskies were more often photographed without snow or in different settings. So the network was essentially using the presence or absence of snow as its primary classification feature, rather than actual differences between the animals (<https://dl.acm.org/doi/10.1145/2939672.2939778>).
+
+When we perform an analysis, we should (as much as is possible), publish the original de-identified data, the source code, and directions to replicate the computing environment. When other people can see *how* we came to our conclusions, these conclusions are more trustworthy. Ethics, applied to research reproducibility, means that you make it as easy as possible for other people to reproduce your results.
+
+
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ### Case Examples
 
-- **NIH All of Us Research Program:** Prioritizes diversity in participants and makes reproducible data pipelines available.  
-- **Reproducibility Crisis:** Many clinical studies fail replication, disproportionately harming underserved populations who may rely on flawed evidence.  
+- **NIH All of Us Research Program:** While this database is a large "sample of convenience", the *All of Us* program prioritizes diversity in participants and makes reproducible data pipelines available (<https://allofus.nih.gov/article/what-makes-all-us-different>).  
+- **Reproducibility Crisis:** Many clinical studies fail replication, disproportionately harming underserved populations who may rely on flawed evidence. Using "open science" policies, we can reduce the potential negative impact of our own work (<https://opusproject.eu/openscience-news/he-reproducibility-crisis-how-open-science-can-save-research/>).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  challenge
 
 **On Your Own:**  
-Identify one step in your current workflow that you could make more transparent.  
-Examples: sharing analysis scripts, describing recruitment biases, or publishing data dictionaries.  
+Identify one step in your current workflow that you could make more transparent (eg: sharing analysis scripts, describing recruitment biases, or publishing data dictionaries). What would a completely reproducible workflow look like?  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
