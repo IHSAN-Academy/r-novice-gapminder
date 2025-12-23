@@ -190,7 +190,7 @@ ls -lh data/gapminder_data.csv
 ```
 
 ``` output
--rw-r--r-- 1 runner runner 80K Dec  9 02:04 data/gapminder_data.csv
+-rw-r--r-- 1 runner runner 80K Dec 23 02:08 data/gapminder_data.csv
 ```
 
 The file size is 80K.
